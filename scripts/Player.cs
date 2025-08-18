@@ -3,7 +3,7 @@ using Godot;
 public partial class Player : CharacterBody2D
 {
     [Export]
-    public float speed = 700;
+    public float speed = 500;
 
     public Vector2 viewPortSize;
 
@@ -33,7 +33,6 @@ public partial class Player : CharacterBody2D
         Velocity = moveVelocity;
         MoveAndSlide();
         GlobalPosition = GlobalPosition.Clamp(new Vector2(0f, 0f), viewPortSize);
-        // Mathf.Clamp(GlobalPosition.Y, 0, viewPortSize.Y);
         GD.Print(GlobalPosition);
     }
 }
