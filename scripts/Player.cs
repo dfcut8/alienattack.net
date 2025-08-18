@@ -14,7 +14,7 @@ public partial class Player : CharacterBody2D
         }
         if (Input.IsActionPressed("player_move_left"))
         {
-            moveVelocity.X -= speed;
+            moveVelocity.X += -speed;
         }
         if (Input.IsActionPressed("player_move_down"))
         {
@@ -22,7 +22,7 @@ public partial class Player : CharacterBody2D
         }
         if (Input.IsActionPressed("player_move_up"))
         {
-            moveVelocity.Y -= speed;
+            moveVelocity.Y += -speed;
         }
         Velocity = moveVelocity;
         MoveAndSlide();
