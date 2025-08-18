@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://dlp14sqev8ypx"]
 
 [ext_resource type="Texture2D" uid="uid://bdkqryt7ttigm" path="res://assets/textures/player_ship.png" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://b2kv1y35mpoka" path="res://scenes/Player.cs" id="1_g2els"]
+[ext_resource type="Script" uid="uid://b2kv1y35mpoka" path="res://scripts/Player.cs" id="1_g2els"]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.2, 0.2)
+motion_mode = 1
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
