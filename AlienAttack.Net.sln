@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlienAttack.Net", "AlienAttack.Net.csproj", "{542019D1-6893-4F24-B250-1AC38DCD0C87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlienAttack.Net", "AlienAttack.Net.csproj", "{BA32E1C2-1FD0-491A-AB15-9E2254BF25F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{542019D1-6893-4F24-B250-1AC38DCD0C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{542019D1-6893-4F24-B250-1AC38DCD0C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{542019D1-6893-4F24-B250-1AC38DCD0C87}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{542019D1-6893-4F24-B250-1AC38DCD0C87}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{542019D1-6893-4F24-B250-1AC38DCD0C87}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{542019D1-6893-4F24-B250-1AC38DCD0C87}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{BA32E1C2-1FD0-491A-AB15-9E2254BF25F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA32E1C2-1FD0-491A-AB15-9E2254BF25F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA32E1C2-1FD0-491A-AB15-9E2254BF25F5}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{BA32E1C2-1FD0-491A-AB15-9E2254BF25F5}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{BA32E1C2-1FD0-491A-AB15-9E2254BF25F5}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{BA32E1C2-1FD0-491A-AB15-9E2254BF25F5}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal
