@@ -14,6 +14,4 @@ stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(184, 269)
-
-[node name="Rocket" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(276, 272)
+rocket = ExtResource("3_lnu2h")
