@@ -9,14 +9,14 @@ public partial class Player : CharacterBody2D
 
     [Export]
     public PackedScene rocket;
-    public PackedScene rocketScene;
+    // public PackedScene rocketScene;
 
     public Vector2 viewPortSize;
 
     public override void _Ready()
     {
         viewPortSize = GetViewportRect().Size;
-        rocketScene = GD.Load<PackedScene>(rocket.ResourcePath);
+        // rocketScene = GD.Load<PackedScene>(rocket.ResourcePath);
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -48,7 +48,7 @@ public partial class Player : CharacterBody2D
 
     private void shoot()
     {
-        var instance = rocketScene.Instantiate();
+        var instance = rocket.Instantiate();
         AddChild(instance);
     }
 }
