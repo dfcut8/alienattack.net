@@ -1,5 +1,7 @@
 using Godot;
 
+namespace AlienAttack;
+
 public partial class Rocket : Area2D
 {
     [Export]
@@ -7,6 +9,5 @@ public partial class Rocket : Area2D
     public override void _PhysicsProcess(double delta)
     {
         GlobalPosition = new Vector2(GlobalPosition.X + speed * (float)delta, GlobalPosition.Y);
-
     }
 }

@@ -1,5 +1,7 @@
 using Godot;
 
+namespace AlienAttack;
+
 public partial class Player : CharacterBody2D
 {
     [Export]
