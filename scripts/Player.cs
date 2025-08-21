@@ -57,7 +57,9 @@ public partial class Player : CharacterBody2D
 
     private void shoot()
     {
-        var instance = rocketScene.Instantiate();
+        Area2D instance = rocketScene.Instantiate() as Area2D;
+
         AddChild(instance);
+        instance.GlobalPosition += new Vector2(50, 0);
     }
 }
