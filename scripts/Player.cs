@@ -8,15 +8,14 @@ public partial class Player : CharacterBody2D
     public float speed = 500f;
 
     [Export]
-    public PackedScene rocket;
-    // public PackedScene rocketScene;
+    public PackedScene rocketScene;
 
     public Vector2 viewPortSize;
 
     public override void _Ready()
     {
         viewPortSize = GetViewportRect().Size;
-        // rocketScene = GD.Load<PackedScene>(rocket.ResourcePath);
+        rocketScene = GD.Load<PackedScene>("res://scenes/rocket.tscn");
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -41,14 +40,24 @@ public partial class Player : CharacterBody2D
         {
             shoot();
         }
+        if (Input.IsActionJustPressed("global_reset_level"))
+        {
+            die();
+        }
         Velocity = moveVelocity;
         MoveAndSlide();
         GlobalPosition = GlobalPosition.Clamp(new Vector2(0f, 0f), viewPortSize);
+        GD.Print($"GetChildCount={GetChildCount()}");
+    }
+
+    private void die()
+    {
+        QueueFree();
     }
 
     private void shoot()
     {
-        var instance = rocket.Instantiate();
+        var instance = rocketScene.Instantiate();
         AddChild(instance);
     }
 }
