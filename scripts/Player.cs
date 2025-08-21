@@ -7,8 +7,8 @@ public partial class Player : CharacterBody2D
     [Export]
     public float speed = 500f;
 
-    [Export]
     public PackedScene rocketScene;
+    private Node rocketContainer;
 
     public Vector2 viewPortSize;
 
@@ -16,6 +16,7 @@ public partial class Player : CharacterBody2D
     {
         viewPortSize = GetViewportRect().Size;
         rocketScene = GD.Load<PackedScene>("res://scenes/rocket.tscn");
+        rocketContainer = GetNode<Node>("RocketContainer");
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -59,7 +60,7 @@ public partial class Player : CharacterBody2D
     {
         Area2D instance = rocketScene.Instantiate() as Area2D;
 
-        AddChild(instance);
-        instance.GlobalPosition += new Vector2(50, 0);
+        rocketContainer.AddChild(instance);
+        instance.GlobalPosition = new Vector2(GlobalPosition.X + 50, GlobalPosition.Y);
     }
 }
