@@ -7,16 +7,19 @@ public partial class Player : CharacterBody2D
     [Export]
     public float speed = 500f;
 
+    [Export]
     public PackedScene rocketScene;
-    private Node rocketContainer;
+
+    [Export]
+    public Node rocketContainer;
 
     public Vector2 viewPortSize;
 
     public override void _Ready()
     {
         viewPortSize = GetViewportRect().Size;
-        rocketScene = GD.Load<PackedScene>("res://scenes/rocket.tscn");
-        rocketContainer = GetNode<Node>("RocketContainer");
+        // rocketScene = GD.Load<PackedScene>("res://scenes/rocket.tscn");
+        // rocketContainer = GetNode<Node>("../AnotherRocketContainer");
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -48,7 +51,6 @@ public partial class Player : CharacterBody2D
         Velocity = moveVelocity;
         MoveAndSlide();
         GlobalPosition = GlobalPosition.Clamp(new Vector2(0f, 0f), viewPortSize);
-        GD.Print($"GetChildCount={GetChildCount()}");
     }
 
     private void die()

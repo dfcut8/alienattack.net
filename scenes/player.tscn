@@ -3,10 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://bdkqryt7ttigm" path="res://assets/textures/player_ship.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://b2kv1y35mpoka" path="res://scripts/Player.cs" id="1_g2els"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("rocketContainer")]
 scale = Vector2(0.2, 0.2)
 motion_mode = 1
 script = ExtResource("1_g2els")
+rocketContainer = NodePath("RocketContainer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
