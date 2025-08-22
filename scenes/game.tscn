@@ -17,5 +17,3 @@ stretch_mode = 1
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(184, 269)
 rocketScene = ExtResource("3_lnu2h")
-
-[node name="AnotherRocketContainer" type="Node" parent="."]
