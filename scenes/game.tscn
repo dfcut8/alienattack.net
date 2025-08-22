@@ -20,4 +20,4 @@ position = Vector2(184, 269)
 rocketScene = ExtResource("3_lnu2h")
 
 [node name="Enemy" parent="." instance=ExtResource("5_iywne")]
-position = Vector2(695, 282)
+position = Vector2(884, 301)
