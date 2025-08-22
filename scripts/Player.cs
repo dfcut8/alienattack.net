@@ -1,3 +1,5 @@
+using System;
+
 using Godot;
 
 namespace AlienAttack;
@@ -14,6 +16,8 @@ public partial class Player : CharacterBody2D
     public Node rocketContainer;
 
     public Vector2 viewPortSize;
+
+    public Action playerFired;
 
     public override void _Ready()
     {
@@ -40,6 +44,7 @@ public partial class Player : CharacterBody2D
         }
         if (Input.IsActionJustPressed("player_fire"))
         {
+            playerFired?.Invoke();
             shoot();
         }
 
