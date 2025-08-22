@@ -18,8 +18,6 @@ public partial class Player : CharacterBody2D
     public override void _Ready()
     {
         viewPortSize = GetViewportRect().Size;
-        // rocketScene = GD.Load<PackedScene>("res://scenes/rocket.tscn");
-        // rocketContainer = GetNode<Node>("../AnotherRocketContainer");
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -60,7 +58,7 @@ public partial class Player : CharacterBody2D
 
     private void shoot()
     {
-        Area2D instance = rocketScene.Instantiate() as Area2D;
+        var instance = rocketScene.Instantiate() as Area2D;
 
         rocketContainer.AddChild(instance);
         instance.GlobalPosition = new Vector2(GlobalPosition.X + 50, GlobalPosition.Y);
