@@ -18,7 +18,7 @@ public partial class Rocket : Area2D
 
     private void onPlayerFired(int i)
     {
-        GD.Print($"Processing event from: {Name}");
+        GD.Print($"Processing event from: {Name}, value: {i}");
     }
 
     public override void _PhysicsProcess(double delta)
