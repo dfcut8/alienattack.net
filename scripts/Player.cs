@@ -42,18 +42,10 @@ public partial class Player : CharacterBody2D
         {
             shoot();
         }
-        if (Input.IsActionJustPressed("global_reset_level"))
-        {
-            die();
-        }
+
         Velocity = moveVelocity;
         MoveAndSlide();
         GlobalPosition = GlobalPosition.Clamp(new Vector2(0f, 0f), viewPortSize);
-    }
-
-    private void die()
-    {
-        QueueFree();
     }
 
     private void shoot()
