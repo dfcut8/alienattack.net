@@ -16,7 +16,7 @@ public partial class Rocket : Area2D
         player.playerFired += onPlayerFired;
     }
 
-    private void onPlayerFired()
+    private void onPlayerFired(int i)
     {
         GD.Print($"Processing event from: {Name}");
     }

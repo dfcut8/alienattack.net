@@ -17,7 +17,7 @@ public partial class Player : CharacterBody2D
 
     public Vector2 viewPortSize;
 
-    public Action playerFired;
+    public Action<int> playerFired;
 
     public override void _Ready()
     {
@@ -44,7 +44,7 @@ public partial class Player : CharacterBody2D
         }
         if (Input.IsActionJustPressed("player_fire"))
         {
-            playerFired?.Invoke();
+            playerFired?.Invoke(100);
             shoot();
         }
 
