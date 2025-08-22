@@ -44,8 +44,8 @@ public partial class Player : CharacterBody2D
         }
         if (Input.IsActionJustPressed("player_fire"))
         {
-            playerFired?.Invoke(100);
             shoot();
+            playerFired?.Invoke(100);
         }
 
         Velocity = moveVelocity;
