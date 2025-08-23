@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://cydynf2kcdawl"]
+[gd_scene load_steps=3 format=3 uid="uid://cydynf2kcdawl"]
+
+[ext_resource type="Script" uid="uid://foea4ncx2go4" path="res://Dialogue.cs" id="1_oi3j2"]
+[ext_resource type="PackedScene" uid="uid://25bw5264gr4w" path="res://scenes/dialogue_member.tscn" id="2_758ep"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,6 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oi3j2")
+actors = Array[PackedScene]([ExtResource("2_758ep")])
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 layout_mode = 0

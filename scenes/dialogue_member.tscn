@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://25bw5264gr4w"]
+
+[ext_resource type="Texture2D" uid="uid://b5vb582uatk00" path="res://assets/textures/orb.png" id="1_5cybd"]
+[ext_resource type="Script" uid="uid://ccu22u3n4sl40" path="res://scenes/Actor.cs" id="2_ifd0r"]
+
+[node name="Actor" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1006.0
+offset_bottom = -464.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5cybd")
+script = ExtResource("2_ifd0r")
