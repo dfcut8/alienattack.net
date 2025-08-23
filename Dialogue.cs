@@ -6,7 +6,7 @@ public partial class Dialogue : Control
     [Export]
     private PackedScene[] actors;
 
-    public override void _Ready()
+    public override async void _Ready()
     {
         foreach (var item in actors)
         {
@@ -21,5 +21,14 @@ public partial class Dialogue : Control
         // _ = actor1.ChangeColor();
         GD.Print("Starting Move");
         _ = actor1.Move(GetNode<ReferenceRect>("ReferenceRect"));
+
+        // Tweening text
+        Tween tween = GetTree().CreateTween();
+        tween.TweenProperty(GetNode<RichTextLabel>(
+            "DialogPopup/PanelContainer/RichTextLabel"),
+        "visible_ratio",
+        1.0f,
+        5.0f);
+        await ToSignal(tween, Tween.SignalName.Finished);
     }
 }
