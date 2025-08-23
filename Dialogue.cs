@@ -1,5 +1,3 @@
-using System.Threading.Tasks;
-
 using Godot;
 
 public partial class Dialogue : Control
@@ -16,15 +14,11 @@ public partial class Dialogue : Control
             instance.Visible = false;
             AddChild(instance);
         }
-    }
-
-    public override async void _PhysicsProcess(double delta)
-    {
         var actor1 = GetNode<Actor>("Actor");
-        await Task.Delay(3000);
+        // await Task.Delay(3000);
         actor1.Visible = true;
         GD.Print("Starting ChangeColor");
-        _ = actor1.ChangeColor();
+        // _ = actor1.ChangeColor();
         GD.Print("Starting Move");
         _ = actor1.Move(GetNode<ReferenceRect>("ReferenceRect"));
     }
