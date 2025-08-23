@@ -9,7 +9,6 @@ public partial class Actor : TextureRect
         Tween tween = GetTree().CreateTween();
         tween.TweenProperty(this, "modulate", Colors.Red, 3.0f);
         await ToSignal(tween, Tween.SignalName.Finished);
-        // return Task.CompletedTask;
     }
 
     public async Task Move(ReferenceRect target)

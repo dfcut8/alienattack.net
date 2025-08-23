@@ -24,7 +24,7 @@ public partial class Dialogue : Control
         await Task.Delay(3000);
         actor1.Visible = true;
         GD.Print("Starting ChangeColor");
-        await actor1.ChangeColor();
+        _ = actor1.ChangeColor();
         GD.Print("Starting Move");
         _ = actor1.Move(GetNode<ReferenceRect>("ReferenceRect"));
     }
