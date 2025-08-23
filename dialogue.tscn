@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cydynf2kcdawl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 4.0
+offset_right = 321.0
+offset_bottom = 44.0
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="."]
+offset_left = 858.0
+offset_top = 1.0
+offset_right = 898.0
+offset_bottom = 41.0
+
+[node name="DialogPopup" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 494.0
+offset_right = 1076.0
+offset_bottom = 688.0
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogPopup/PanelContainer"]
+layout_mode = 2
+text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
