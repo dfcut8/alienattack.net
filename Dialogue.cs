@@ -20,10 +20,12 @@ public partial class Dialogue : Control
 
     public override async void _PhysicsProcess(double delta)
     {
-        await Task.Delay(3000);
         var actor1 = GetNode<Actor>("Actor");
+        await Task.Delay(3000);
         actor1.Visible = true;
+        GD.Print("Starting ChangeColor");
         await actor1.ChangeColor();
-        await actor1.Move(GetNode<ReferenceRect>("ReferenceRect"));
+        GD.Print("Starting Move");
+        _ = actor1.Move(GetNode<ReferenceRect>("ReferenceRect"));
     }
 }
