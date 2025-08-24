@@ -1,3 +1,23 @@
 [gd_scene format=3 uid="uid://c72oo26rkbonm"]
 
 [node name="EnemySpawner" type="Node2D"]
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Marker1" type="Marker2D" parent="Positions"]
+position = Vector2(1336, 57)
+
+[node name="Marker2" type="Marker2D" parent="Positions"]
+position = Vector2(1339, 186)
+
+[node name="Marker3" type="Marker2D" parent="Positions"]
+position = Vector2(1340, 319)
+
+[node name="Marker4" type="Marker2D" parent="Positions"]
+position = Vector2(1340, 425)
+
+[node name="Marker5" type="Marker2D" parent="Positions"]
+position = Vector2(1342, 540)
+
+[node name="Marker6" type="Marker2D" parent="Positions"]
+position = Vector2(1346, 655)
