@@ -21,6 +21,7 @@ offset_right = 321.0
 offset_bottom = 44.0
 
 [node name="ReferenceRect2" type="ReferenceRect" parent="."]
+layout_mode = 0
 offset_left = 858.0
 offset_top = 1.0
 offset_right = 898.0
