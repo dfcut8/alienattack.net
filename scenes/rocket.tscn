@@ -9,6 +9,8 @@ height = 104.0
 
 [node name="Rocket" type="Area2D"]
 scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_dkv7l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
