@@ -14,13 +14,16 @@ public partial class Rocket : Area2D
         notifier.ScreenExited += () => QueueFree();
         player = GetNode<Player>("/root/Game/Player");
         player.playerFired += onPlayerFired;
-        AreaEntered += onAreaEntered;
+        AreaEntered += OnAreaEntered;
     }
 
-    private void onAreaEntered(Area2D other)
+    private void OnAreaEntered(Area2D other)
     {
         GD.Print($"Hit! Other name: {other.Name}");
-        other.QueueFree();
+        if (other is Enemy e)
+        {
+            e.Die();
+        }
         QueueFree();
     }
 

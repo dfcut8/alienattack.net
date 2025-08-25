@@ -8,4 +8,9 @@ public partial class Enemy : Area2D
     {
         GlobalPosition = new Vector2(GlobalPosition.X - speed * (float)delta, GlobalPosition.Y);
     }
+
+    public void Die()
+    {
+        QueueFree();
+    }
 }
