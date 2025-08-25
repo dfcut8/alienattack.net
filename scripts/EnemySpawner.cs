@@ -6,10 +6,11 @@ public partial class EnemySpawner : Node2D
     [Export]
     private PackedScene enemyScene;
 
-    private Array<Node> positions;
-    private int currentPosition;
     [Export]
     private int maxEnemies = 30;
+
+    private Array<Node> positions;
+    private int currentPosition;
     private int currentEnemy;
     private Timer timer;
 
@@ -29,8 +30,8 @@ public partial class EnemySpawner : Node2D
         }
         var instance = enemyScene.Instantiate() as Enemy;
         AddChild(instance);
-        var pos = GD.RandRange(0, (positions.Count - 1));
-        instance.Position = ((Marker2D)positions[pos]).Position;
+        var posIdx = GD.RandRange(0, (positions.Count - 1));
+        instance.Position = ((Marker2D)positions[posIdx]).Position;
         currentPosition++;
         currentEnemy++;
         if (currentPosition >= positions.Count)
