@@ -9,7 +9,7 @@ public partial class EnemySpawner : Node2D
     private Array<Node> positions;
     private int currentPosition;
     [Export]
-    private int maxEnemies = 3000;
+    private int maxEnemies = 30;
     private int currentEnemy;
     private Timer timer;
 

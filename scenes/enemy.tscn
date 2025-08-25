@@ -10,7 +10,7 @@ height = 370.0
 [node name="Enemy" type="Area2D"]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_md0e3")
-speed = 500.0
+speed = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -1.5708
