@@ -16,7 +16,9 @@ texture = ExtResource("1_uwrxv")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
+z_index = 2
 position = Vector2(184, 269)
 rocketScene = ExtResource("3_lnu2h")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_iywne")]
+z_index = 1
