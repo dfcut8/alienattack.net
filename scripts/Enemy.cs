@@ -24,6 +24,7 @@ public partial class Enemy : Area2D
 
     public void Die()
     {
+        GameEventHub.EnemyDied?.Invoke(1000);
         QueueFree();
     }
 }
