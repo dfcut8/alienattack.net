@@ -11,4 +11,10 @@ public partial class GameOver : Control
     {
         GetTree().ReloadCurrentScene();
     }
+
+    public void UpdateScore(int score)
+    {
+        var scoreLabel = GetNode<Label>("%Score");
+        scoreLabel.Text = score.ToString();
+    }
 }

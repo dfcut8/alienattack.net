@@ -34,7 +34,7 @@ public partial class Game : Node2D
         }
     }
 
-    private void OnPlayerDied()
+    private async void OnPlayerDied()
     {
         Lives--;
         ui.UpdateLives(Lives);
@@ -43,7 +43,10 @@ public partial class Game : Node2D
             Node gameOverSceneInstance = gameOverScene.Instantiate();
             gameOverSceneInstance.ProcessMode = ProcessModeEnum.WhenPaused;
             GetNode("UiCanvas").AddChild(gameOverSceneInstance);
+            var gameOverScreen = gameOverSceneInstance as GameOver;
             GetTree().Paused = true;
+            await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+            gameOverScreen.UpdateScore(Score);
         }
     }
 
