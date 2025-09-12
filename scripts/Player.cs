@@ -1,12 +1,8 @@
-using System;
-
 using Godot;
+using System;
 
 public partial class Player : CharacterBody2D
 {
-    [Export]
-    public int lives = 2;
-
     [Export]
     public float speed = 500f;
 
@@ -62,12 +58,7 @@ public partial class Player : CharacterBody2D
 
     public void TakeDamage()
     {
-        if (lives <= 0)
-        {
-            GetTree().ReloadCurrentScene();
-        }
         GameEventHub.PlayerDied?.Invoke();
-        lives--;
         Position = RespawnPosition;
         sprite.Modulate = sprite.Modulate.Darkened(0.3f);
     }

@@ -14,6 +14,10 @@ size = Vector2(20, 752)
 script = ExtResource("1_lbhrr")
 deathZone = NodePath("DeathZone")
 
+[node name="UiCanvas" type="CanvasLayer" parent="."]
+
+[node name="Ui" parent="UiCanvas" instance=ExtResource("6_p57ef")]
+
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -35,5 +39,3 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2(-256, 357)
 shape = SubResource("RectangleShape2D_iywne")
-
-[node name="Ui" parent="." instance=ExtResource("6_p57ef")]
