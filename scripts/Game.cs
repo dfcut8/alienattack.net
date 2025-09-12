@@ -5,6 +5,9 @@ public partial class Game : Node2D
     [Export]
     private Area2D deathZone;
 
+    [Export]
+    private PackedScene gameOverScene;
+
     public int Lives { get; private set; } = 2;
     public int Score { get; private set; } = 0;
 
@@ -37,7 +40,10 @@ public partial class Game : Node2D
         ui.UpdateLives(Lives);
         if (Lives < 0)
         {
-            GetTree().ReloadCurrentScene();
+            Node gameOverSceneInstance = gameOverScene.Instantiate();
+            gameOverSceneInstance.ProcessMode = ProcessModeEnum.WhenPaused;
+            GetNode("UiCanvas").AddChild(gameOverSceneInstance);
+            GetTree().Paused = true;
         }
     }
 

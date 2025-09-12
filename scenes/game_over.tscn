@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=3 uid="uid://bin7d5jctfo1k"]
+
+[ext_resource type="Script" uid="uid://crp7onqsf2wd5" path="res://scenes/GameOver.cs" id="1_wqhvx"]
+[ext_resource type="FontFile" uid="uid://l55bo7prolpg" path="res://assets/font/Kenney Blocks.ttf" id="1_xeevv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nqlu"]
+bg_color = Color(0.541176, 0.537255, 0.85098, 0.470588)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.952886, 0.693317, 0.983711, 1)
+border_blend = true
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_wqhvx"]
+font = ExtResource("1_xeevv")
+font_size = 64
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xeevv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xeevv"]
+font_size = 36
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqhvx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -323.0
+offset_top = -193.5
+offset_right = 323.0
+offset_bottom = 193.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0nqlu")
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.0
+offset_right = 208.0
+offset_bottom = 96.0
+grow_horizontal = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_wqhvx")
+
+[node name="ScoreContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -25.0
+offset_right = 150.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xeevv")
+
+[node name="ScoreLabel" type="Label" parent="Panel/ScoreContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "Score:"
+label_settings = SubResource("LabelSettings_xeevv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Panel/ScoreContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_xeevv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.162539
+anchor_top = 1.0
+anchor_right = 0.823529
+anchor_bottom = 1.0
+offset_top = -137.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RetryButton" type="Button" parent="Panel/Buttons"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 54.0
+offset_bottom = 15.5
+grow_vertical = 2
+text = "RETRY"
