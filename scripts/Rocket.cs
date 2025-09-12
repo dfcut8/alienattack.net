@@ -13,7 +13,7 @@ public partial class Rocket : Area2D
         var notifier = GetNode<VisibleOnScreenNotifier2D>("VisibleNotifier");
         notifier.ScreenExited += () => QueueFree();
         player = GetNode<Player>("/root/Game/Player");
-        player.playerFired += onPlayerFired;
+        player.PlayerFired += onPlayerFired;
         AreaEntered += OnAreaEntered;
     }
 
@@ -39,6 +39,6 @@ public partial class Rocket : Area2D
 
     protected override void Dispose(bool disposing)
     {
-        player.playerFired -= onPlayerFired;
+        player.PlayerFired -= onPlayerFired;
     }
 }

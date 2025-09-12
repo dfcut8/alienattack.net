@@ -7,7 +7,13 @@ namespace AlienAttack;
 public partial class Player : CharacterBody2D
 {
     [Export]
+    public int lives = 3;
+
+    [Export]
     public float speed = 500f;
+
+    [Export]
+    public Vector2 RespawnPosition = new Vector2(50, 250);
 
     [Export]
     public PackedScene rocketScene;
@@ -17,7 +23,8 @@ public partial class Player : CharacterBody2D
 
     public Vector2 viewPortSize;
 
-    public Action<int> playerFired;
+    public Action<int> PlayerFired;
+    public Action PlayerDied;
 
     public override void _Ready()
     {
@@ -45,12 +52,23 @@ public partial class Player : CharacterBody2D
         if (Input.IsActionJustPressed("player_fire"))
         {
             shoot();
-            playerFired?.Invoke(100);
+            PlayerFired?.Invoke(100);
         }
 
         Velocity = moveVelocity;
         MoveAndSlide();
         GlobalPosition = GlobalPosition.Clamp(new Vector2(0f, 0f), viewPortSize);
+    }
+
+    public void TakeDamage()
+    {
+        if (lives <= 0)
+        {
+            PlayerDied?.Invoke();
+            GetTree().ReloadCurrentScene();
+        }
+        lives--;
+        Position = RespawnPosition;
     }
 
     private void shoot()

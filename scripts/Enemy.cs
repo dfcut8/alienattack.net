@@ -1,9 +1,22 @@
+using AlienAttack;
+
 using Godot;
 
 public partial class Enemy : Area2D
 {
     [Export]
     private float speed = 100;
+
+    public override void _Ready()
+    {
+        BodyEntered += OnBodyEntered;
+    }
+
+    private void OnBodyEntered(Node2D body)
+    {
+        var p = body as Player;
+        p.TakeDamage();
+    }
 
     public override void _PhysicsProcess(double delta)
     {
