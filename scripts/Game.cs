@@ -7,6 +7,7 @@ public partial class Game : Node2D
 
     public override void _Ready()
     {
+        GameEventHub.PlayerDied += OnPlayerDied;
         deathZone.AreaEntered += (Area2D a) =>
         {
             GD.Print($"Deathzone: Collided with: {a.Name}");
@@ -19,5 +20,15 @@ public partial class Game : Node2D
         {
             GetTree().ReloadCurrentScene();
         }
+    }
+
+    private void OnPlayerDied()
+    {
+        GD.Print("From Game: OnPlayerDied");
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        GameEventHub.PlayerDied -= OnPlayerDied;
     }
 }

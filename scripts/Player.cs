@@ -2,8 +2,6 @@ using System;
 
 using Godot;
 
-namespace AlienAttack;
-
 public partial class Player : CharacterBody2D
 {
     [Export]
@@ -24,7 +22,6 @@ public partial class Player : CharacterBody2D
     public Vector2 viewPortSize;
 
     public Action<int> PlayerFired;
-    public Action PlayerDied;
 
     private Sprite2D sprite;
 
@@ -67,9 +64,9 @@ public partial class Player : CharacterBody2D
     {
         if (lives <= 0)
         {
-            PlayerDied?.Invoke();
             GetTree().ReloadCurrentScene();
         }
+        GameEventHub.PlayerDied?.Invoke();
         lives--;
         Position = RespawnPosition;
         sprite.Modulate = sprite.Modulate.Darkened(0.3f);

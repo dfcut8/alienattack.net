@@ -1,5 +1,3 @@
-using AlienAttack;
-
 using Godot;
 
 public partial class Enemy : Area2D
@@ -16,6 +14,7 @@ public partial class Enemy : Area2D
     {
         var p = body as Player;
         p.TakeDamage();
+        Die();
     }
 
     public override void _PhysicsProcess(double delta)
