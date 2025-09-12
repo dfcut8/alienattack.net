@@ -7,7 +7,7 @@ namespace AlienAttack;
 public partial class Player : CharacterBody2D
 {
     [Export]
-    public int lives = 3;
+    public int lives = 2;
 
     [Export]
     public float speed = 500f;
@@ -26,8 +26,11 @@ public partial class Player : CharacterBody2D
     public Action<int> PlayerFired;
     public Action PlayerDied;
 
+    private Sprite2D sprite;
+
     public override void _Ready()
     {
+        sprite = GetNode<Sprite2D>("Sprite2D");
         viewPortSize = GetViewportRect().Size;
     }
     public override void _PhysicsProcess(double delta)
@@ -69,6 +72,7 @@ public partial class Player : CharacterBody2D
         }
         lives--;
         Position = RespawnPosition;
+        sprite.Modulate = sprite.Modulate.Darkened(0.3f);
     }
 
     private void shoot()
