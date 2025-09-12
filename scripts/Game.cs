@@ -5,7 +5,7 @@ public partial class Game : Node2D
     [Export]
     private Area2D deathZone;
 
-    public int Lives { get; private set; } = 3;
+    public int Lives { get; private set; } = 2;
     public int Score { get; private set; } = 0;
 
     private Ui ui;
@@ -35,7 +35,7 @@ public partial class Game : Node2D
     {
         Lives--;
         ui.UpdateLives(Lives);
-        if (Lives <= 0)
+        if (Lives < 0)
         {
             GetTree().ReloadCurrentScene();
         }
