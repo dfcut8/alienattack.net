@@ -4,16 +4,16 @@ using System;
 public partial class Player : CharacterBody2D
 {
     [Export]
-    public float speed = 500f;
+    public float Speed = 500f;
 
     [Export]
     public Vector2 RespawnPosition = new Vector2(50, 250);
 
     [Export]
-    public PackedScene rocketScene;
+    public PackedScene RocketScene;
 
     [Export]
-    public Node rocketContainer;
+    public Node RocketContainer;
 
     public Vector2 viewPortSize;
 
@@ -31,19 +31,19 @@ public partial class Player : CharacterBody2D
         var moveVelocity = new Vector2();
         if (Input.IsActionPressed("player_move_right"))
         {
-            moveVelocity.X += speed;
+            moveVelocity.X += Speed;
         }
         if (Input.IsActionPressed("player_move_left"))
         {
-            moveVelocity.X += -speed;
+            moveVelocity.X += -Speed;
         }
         if (Input.IsActionPressed("player_move_down"))
         {
-            moveVelocity.Y += speed;
+            moveVelocity.Y += Speed;
         }
         if (Input.IsActionPressed("player_move_up"))
         {
-            moveVelocity.Y += -speed;
+            moveVelocity.Y += -Speed;
         }
         if (Input.IsActionJustPressed("player_fire"))
         {
@@ -65,9 +65,9 @@ public partial class Player : CharacterBody2D
 
     private void shoot()
     {
-        var instance = rocketScene.Instantiate() as Area2D;
+        var instance = RocketScene.Instantiate() as Area2D;
 
-        rocketContainer.AddChild(instance);
+        RocketContainer.AddChild(instance);
         instance?.GlobalPosition = new Vector2(GlobalPosition.X + 50, GlobalPosition.Y);
     }
 }
