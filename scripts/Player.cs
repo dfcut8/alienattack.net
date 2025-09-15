@@ -68,6 +68,6 @@ public partial class Player : CharacterBody2D
         var instance = rocketScene.Instantiate() as Area2D;
 
         rocketContainer.AddChild(instance);
-        instance.GlobalPosition = new Vector2(GlobalPosition.X + 50, GlobalPosition.Y);
+        instance?.GlobalPosition = new Vector2(GlobalPosition.X + 50, GlobalPosition.Y);
     }
 }
