@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://m0ukd7qwyelo"]
+[gd_scene load_steps=10 format=3 uid="uid://m0ukd7qwyelo"]
 
 [ext_resource type="Script" uid="uid://bg1233e43t03x" path="res://scripts/Game.cs" id="1_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://cvhgmcequ5urx" path="res://assets/textures/bg.png" id="1_uwrxv"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c70hfc75vrm1b" path="res://scenes/ui.tscn" id="6_p57ef"]
 [ext_resource type="AudioStream" uid="uid://cbft8ybod711m" path="res://assets/audio/hit.wav" id="7_u5sy4"]
 [ext_resource type="AudioStream" uid="uid://c5ug2tv2jhoml" path="res://assets/audio/explode.wav" id="8_0tnpc"]
-[ext_resource type="AudioStream" uid="uid://bguvpll3o8pwg" path="res://assets/audio/sfx_laser2.wav" id="9_vtaks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
 size = Vector2(20, 752)
@@ -30,10 +29,9 @@ offset_bottom = 720.0
 texture = ExtResource("1_uwrxv")
 stretch_mode = 1
 
-[node name="Player" parent="." node_paths=PackedStringArray("playerFireSound") instance=ExtResource("2_yqjtg")]
+[node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 z_index = 2
 position = Vector2(184, 269)
-playerFireSound = NodePath("../SFX/PlayerFireSound")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_iywne")]
 z_index = 1
@@ -53,6 +51,3 @@ stream = ExtResource("7_u5sy4")
 
 [node name="PlayerHitSound" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("8_0tnpc")
-
-[node name="PlayerFireSound" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource("9_vtaks")
