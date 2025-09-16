@@ -59,6 +59,18 @@ public partial class Player : CharacterBody2D
     public void TakeDamage()
     {
         GameEventHub.PlayerDied?.Invoke();
+        if (Game.Lives >= 0)
+        {
+            Respawn();
+        }
+        else
+        {
+            QueueFree();
+        }
+    }
+
+    private void Respawn()
+    {
         Position = RespawnPosition;
         sprite.Modulate = sprite.Modulate.Darkened(0.3f);
     }

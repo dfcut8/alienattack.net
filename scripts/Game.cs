@@ -8,7 +8,7 @@ public partial class Game : Node2D
     [Export]
     private PackedScene gameOverScene;
 
-    public int Lives { get; private set; } = 2;
+    public static int Lives { get; private set; } = 2;
     public int Score { get; private set; } = 0;
 
     private Ui ui;
@@ -38,16 +38,14 @@ public partial class Game : Node2D
     {
         Lives--;
         ui.UpdateLives(Lives);
-        if (Lives < 0)
-        {
-            Node gameOverSceneInstance = gameOverScene.Instantiate();
-            gameOverSceneInstance.ProcessMode = ProcessModeEnum.WhenPaused;
-            GetNode("UiCanvas").AddChild(gameOverSceneInstance);
-            var gameOverScreen = gameOverSceneInstance as GameOver;
-            GetTree().Paused = true;
-            await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
-            gameOverScreen?.UpdateScore(Score);
-        }
+        if (Lives >= 0) return;
+        await ToSignal(GetTree().CreateTimer(1.5f), SceneTreeTimer.SignalName.Timeout);
+        var gameOverSceneInstance = gameOverScene.Instantiate();
+        gameOverSceneInstance.ProcessMode = ProcessModeEnum.WhenPaused;
+        GetNode("UiCanvas").AddChild(gameOverSceneInstance);
+        var gameOverScreen = gameOverSceneInstance as GameOver;
+        gameOverScreen?.UpdateScore(Score);
+        GetTree().Paused = true;
     }
 
     private void OnEnemyDied(int score)
