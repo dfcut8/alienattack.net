@@ -7,6 +7,12 @@ public partial class Game : Node2D
 
     [Export]
     private PackedScene gameOverScene;
+    
+    [Export]
+    private AudioStreamPlayer enemyHitSound;
+    
+    [Export]
+    private AudioStreamPlayer playerHitSound;
 
     public static int Lives { get; private set; } = 2;
     public int Score { get; private set; } = 0;
@@ -38,6 +44,7 @@ public partial class Game : Node2D
     {
         Lives--;
         ui.UpdateLives(Lives);
+        playerHitSound.Play();
         if (Lives >= 0) return;
         await ToSignal(GetTree().CreateTimer(1.5f), SceneTreeTimer.SignalName.Timeout);
         var gameOverSceneInstance = gameOverScene.Instantiate();
@@ -51,6 +58,7 @@ public partial class Game : Node2D
     private void OnEnemyDied(int score)
     {
         Score += score;
+        enemyHitSound.Play();
         ui.UpdateScore(Score);
     }
 

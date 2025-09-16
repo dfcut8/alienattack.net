@@ -11,6 +11,9 @@ public partial class Player : CharacterBody2D
 
     [Export]
     public PackedScene RocketScene;
+    
+    [Export]
+    private AudioStreamPlayer playerFireSound;
 
     [Export]
     public Node RocketContainer;
@@ -78,8 +81,8 @@ public partial class Player : CharacterBody2D
     private void Shoot()
     {
         var instance = RocketScene.Instantiate() as Area2D;
-
         RocketContainer.AddChild(instance);
         instance?.GlobalPosition = new Vector2(GlobalPosition.X + 50, GlobalPosition.Y);
+        playerFireSound.Play();
     }
 }
