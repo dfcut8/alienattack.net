@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlp14sqev8ypx"]
+[gd_scene load_steps=4 format=3 uid="uid://dlp14sqev8ypx"]
 
 [ext_resource type="Texture2D" uid="uid://bdkqryt7ttigm" path="res://assets/textures/player_ship.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://b2kv1y35mpoka" path="res://scripts/Player.cs" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://covmg7y7hgjsy" path="res://scenes/rocket.tscn" id="2_qhqgy"]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("rocketContainer")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("RocketContainer")]
 scale = Vector2(0.2, 0.2)
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_g2els")
-rocketContainer = NodePath("RocketContainer")
+RocketScene = ExtResource("2_qhqgy")
+RocketContainer = NodePath("RocketContainer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

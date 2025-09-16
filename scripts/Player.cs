@@ -47,7 +47,7 @@ public partial class Player : CharacterBody2D
         }
         if (Input.IsActionJustPressed("player_fire"))
         {
-            shoot();
+            Shoot();
             PlayerFired?.Invoke(100);
         }
 
@@ -63,7 +63,7 @@ public partial class Player : CharacterBody2D
         sprite.Modulate = sprite.Modulate.Darkened(0.3f);
     }
 
-    private void shoot()
+    private void Shoot()
     {
         var instance = RocketScene.Instantiate() as Area2D;
 
