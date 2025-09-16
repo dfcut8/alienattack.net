@@ -46,7 +46,7 @@ public partial class Game : Node2D
             var gameOverScreen = gameOverSceneInstance as GameOver;
             GetTree().Paused = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
-            gameOverScreen.UpdateScore(Score);
+            gameOverScreen?.UpdateScore(Score);
         }
     }
 
