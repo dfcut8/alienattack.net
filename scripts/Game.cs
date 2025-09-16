@@ -43,9 +43,12 @@ public partial class Game : Node2D
     private async void OnPlayerDied()
     {
         Lives--;
-        ui.UpdateLives(Lives);
         playerHitSound.Play();
-        if (Lives >= 0) return;
+        if (Lives >= 0)
+        {
+            ui.UpdateLives(Lives);
+            return;
+        }
         await ToSignal(GetTree().CreateTimer(1.5f), SceneTreeTimer.SignalName.Timeout);
         var gameOverSceneInstance = gameOverScene.Instantiate();
         gameOverSceneInstance.ProcessMode = ProcessModeEnum.WhenPaused;
