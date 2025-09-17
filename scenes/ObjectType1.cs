@@ -7,6 +7,8 @@ public partial class ObjectType1 : Area2D
         InputPickable = true;
         MouseEntered += OnMouseEntered;
         MouseExited += OnMouseExited;
+        GetViewport().PhysicsObjectPickingSort = true;
+        GetViewport().PhysicsObjectPickingFirstOnly = true;
     }
 
     private void OnMouseExited()
