@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjdvk1ihxhv5b"]
+
+[ext_resource type="PackedScene" uid="uid://ddr2wonk7yel6" path="res://scenes/object_type_1.tscn" id="1_7wk63"]
+
+[node name="MouseEvents" type="Node2D"]
+
+[node name="ObjectType2" parent="." instance=ExtResource("1_7wk63")]
+position = Vector2(289, 391)
+
+[node name="ObjectType1" parent="." instance=ExtResource("1_7wk63")]
+position = Vector2(273, 347)
