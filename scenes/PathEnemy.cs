@@ -3,7 +3,7 @@ using System;
 
 public partial class PathEnemy : Path2D
 {
-    [Export] private float speed;
+    [Export] private float speed = 200;
     private PathFollow2D pathFollow;
     private Area2D follower;
 
@@ -16,9 +16,9 @@ public partial class PathEnemy : Path2D
     public override void _PhysicsProcess(double delta)
     {
         pathFollow.Progress += (float)delta * speed;
-        if (pathFollow.Progress >= 1)
+        if (pathFollow.ProgressRatio >= 1)
         {
-            follower.QueueFree();
+            QueueFree();
         }
             
     }
