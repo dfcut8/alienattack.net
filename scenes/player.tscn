@@ -23,8 +23,9 @@ curve = SubResource("Curve_tuyoq")
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(1, 55, 1)
-spread = 8.0
-initial_velocity_min = -400.0
+velocity_pivot = Vector3(1, 0, 0)
+initial_velocity_min = -1200.0
+initial_velocity_max = 400.0
 gravity = Vector3(0, 0, 0)
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_fjrip")
@@ -40,10 +41,9 @@ playerFireSound = NodePath("PlayerFireSound")
 RocketContainer = NodePath("RocketContainer")
 
 [node name="FlameParticleEffect" type="GPUParticles2D" parent="."]
-position = Vector2(-175, 0)
-scale = Vector2(1, 1)
+position = Vector2(-165, 0)
 amount = 200
-lifetime = 0.5
+lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_dqkch")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
